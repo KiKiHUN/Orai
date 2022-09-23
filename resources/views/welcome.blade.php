@@ -3,12 +3,10 @@
     <head>
     </head>
     <body>
-       <H1 style='color:red ' id="ik" OnClick="alma">Incidens Kar</H1>
-       <script>
-function alma()
-{
-    Windows.href("inf.elte.hu");
-}
-        </script>
+       <H1 style='color:red ' id="ik" >Incidens Kar</H1>
+       <hr>
+       <input type="button" onclick="location.href='/alma';" value="Alma" />
+       <a href="/alma">Alma, csak szöveggel</a>
+      {{$name}}
     </body>
 </html>
