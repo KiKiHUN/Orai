@@ -44,7 +44,7 @@ Route::get('/urllekeres',function()
     ]);
 });
 
-Route::get('/post/{post}', function ($post) {
+/*Route::get('/post/{post}', function ($post) {
     $posts=[
         "ez-az-elso"=>"ez az első oldal",
         "ez-a-masodik"=>"Ez a második oldal"
@@ -55,4 +55,5 @@ Route::get('/post/{post}', function ($post) {
     return view('post',[
         'post'=>$posts[$post] ?? "Nincs ilyen oldal"
     ]);
-});
+});*/
+Route::get('/posts/{post}',[App\Http\Controllers\PostController::class,'show']);
