@@ -56,4 +56,5 @@ Route::get('/urllekeres',function()
         'post'=>$posts[$post] ?? "Nincs ilyen oldal"
     ]);
 });*/
-Route::get('/posts/{post}',[App\Http\Controllers\PostController::class,'show']);
+//Route::get('/posts/{post}',[App\Http\Controllers\PostController::class,'show']);
+Route::get('/{nev}',[App\Http\Controllers\PostController::class,'mutat']);
