@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nev');
             $table->integer('jelen_ev');
-            $table->datetime('szul_dat');
+            $table->date('szul_dat');
             $table->string('lakcim');
             $table->timestamps();
         });
