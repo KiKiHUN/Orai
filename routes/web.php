@@ -58,3 +58,5 @@ Route::get('/urllekeres',function()
 });*/
 Route::get('/posts/{post}',[App\Http\Controllers\PostController::class,'show']);
 Route::get('/{nev}',[App\Http\Controllers\PostController::class,'mutat']);
+
+Route::get('/flights/{id}',[App\Http\Controllers\FlightController::class,'show']);
