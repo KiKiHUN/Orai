@@ -14,6 +14,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         \App\Models\Flight::factory(1000)->create();
+         \App\Models\City::factory(50)->create();
+         \App\Models\Airlines::factory(25)->create();
+         \App\Models\Flight::factory(500)->create();
+         \App\Models\City_Flight::factory(1000)->create();
+         \App\Models\Passanger::factory(5000)->create();
     }
 }

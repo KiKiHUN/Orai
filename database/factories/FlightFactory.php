@@ -23,8 +23,8 @@ class FlightFactory extends Factory
             "price" =>$this->faker->numberBetween($min=0,$max=1),
             "active" =>$this->faker->numberBetween($min=0,$max=1),
             "delayed" =>$this->faker->numberBetween($min=0,$max=1),
-            "departed" =>$this->faker->numberBetween($min=0,$max=1)
-
+            "departed" =>$this->faker->numberBetween($min=0,$max=1),
+            "airlineid"=>$this->faker->numberBetween($min=1,$max=25)
         ];
     }
 }
