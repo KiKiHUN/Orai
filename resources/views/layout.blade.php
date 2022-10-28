@@ -9,6 +9,7 @@
 <meta name="author" content="mlp design">
 <meta name="robots" content="index, follow">
 <link rel="stylesheet" href="{{asset('css/pastel.css')}}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 <!-- Menu Items -->
@@ -19,6 +20,7 @@
  <ul id="menu">
   <li><a class="{{Request::path()==='/' ? 'active' : '' }}" href="/">Kezdőoldal</a></li>
   <li><a class="{{Request::path()==='/krisztian' ? 'active' : '' }}" href="/krisztian">Órai feladat</a></li>
+  <li><a class="{{Request::path()==='/legitarsasag/create' ? 'active' : '' }}" href="/legitarsasag/create">Légitársaság hozzáad</a></li>
  </ul>
 </nav>
 <!-- // -->
