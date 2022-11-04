@@ -1,7 +1,7 @@
 
 @extends("layout")
 @section('content')
-<form action="/legitarsasag" method="POST">
+<form action="/legitarsasag/store" method="POST">
     @csrf
     <div class="form-group">
         <label for="name">Repülő társaság neve:</label>

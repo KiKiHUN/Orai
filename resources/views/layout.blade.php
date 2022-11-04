@@ -20,7 +20,8 @@
  <ul id="menu">
   <li><a class="{{Request::path()==='/' ? 'active' : '' }}" href="/">Kezdőoldal</a></li>
   <li><a class="{{Request::path()==='/krisztian' ? 'active' : '' }}" href="/krisztian">Órai feladat</a></li>
-  <li><a class="{{Request::path()==='/legitarsasag/create' ? 'active' : '' }}" href="/legitarsasag/create">Légitársaság hozzáad</a></li>
+  <li><a class="{{Request::path()==='/legitarsasag/create' ? 'active' : '' }}" href="/legitarsasag/listazas">Légitársaságok</a></li>
+  <li><a class="{{Request::path()==='/varos/create' ? 'active' : '' }}" href="/varos/listazas">Városok</a></li>
  </ul>
 </nav>
 <!-- // -->

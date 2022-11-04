@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\DB;
 
 class AirlinesController extends Controller
 {
+    public function mutat()
+    {
+        $adat=DB::select('Select * from airlines');
+        return view ('airlines.show',compact('adat'));
+    }
+    
     public function postcreate()
     {
         return view("airlines.create");
@@ -26,9 +32,13 @@ class AirlinesController extends Controller
             ]
             );
 */
-        
-        $adat=DB::select('Select * from airlines');
-        return view ('airlines.show',compact('adat'));
+            return redirect('/legitarsasag/listazas');
+       
+    }
+    public function szures($request)
+    {
+        $adat=DB::table('flights')->select('*')->where('airlineid','=',$request)->get();
+        return view('airlines.szures',['adat'=>$adat]);
     }
 
 }
