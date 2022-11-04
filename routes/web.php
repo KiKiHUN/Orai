@@ -60,7 +60,13 @@ Route::get('/posts/{post}',[App\Http\Controllers\PostController::class,'show']);
 Route::get('/{nev}',[App\Http\Controllers\PostController::class,'mutat']);
 
 Route::get('/flights/{id}',[App\Http\Controllers\FlightController::class,'show']);
+
+Route::get('/utasok/create',[App\Http\Controllers\pessengerController::class,'create']);
+Route::post('/utasok/store',[App\Http\Controllers\pessengerController::class,'store']);
 Route::get('/utasok/{utas}',[App\Http\Controllers\pessengerController::class,'show']);
+
+
+
 
 Route::get('/legitarsasag/listazas',[App\Http\Controllers\AirlinesController::class,'mutat']);
 Route::get('/legitarsasag/listazas/{legiID}',[App\Http\Controllers\AirlinesController::class,'szures']);
