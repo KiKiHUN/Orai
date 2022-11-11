@@ -35,8 +35,7 @@ Route::get('/arraytest', function () {
     return view('arraytest')->with(['asd'=>$asd,'tomb'=>$tomb]);
 });
 
-Route::get('/urllekeres',function()
-{
+Route::get('/urllekeres',function(){
     return view('urllekeres',[
         'ertek'=>request('ertek'),
         'adat'=>request('adat'),
@@ -56,6 +55,8 @@ Route::get('/urllekeres',function()
         'post'=>$posts[$post] ?? "Nincs ilyen oldal"
     ]);
 });*/
+
+
 Route::get('/posts/{post}',[App\Http\Controllers\PostController::class,'show']);
 Route::get('/{nev}',[App\Http\Controllers\PostController::class,'mutat']);
 
@@ -69,9 +70,13 @@ Route::get('/utasok/{utas}',[App\Http\Controllers\pessengerController::class,'sh
 
 
 Route::get('/legitarsasag/listazas',[App\Http\Controllers\AirlinesController::class,'mutat']);
-Route::get('/legitarsasag/listazas/{legiID}',[App\Http\Controllers\AirlinesController::class,'szures']);
 Route::get('/legitarsasag/create',[App\Http\Controllers\AirlinesController::class,'postcreate']);
 Route::post('/legitarsasag/store',[App\Http\Controllers\AirlinesController::class,'store']);
+Route::post('/legitarsasag/edit/{legiID}', [App\Http\Controllers\AirlinesController::class, 'edit']);
+Route::PUT('/legitarsasag/update/{legiID}', [App\Http\Controllers\AirlinesController::class, 'update']);
+Route::delete("/legitarsasag/listazas/{legiID}" , [App\Http\Controllers\AirlinesController::class, 'destroy']);
+Route::get('/legitarsasag/listazas/{legiID}',[App\Http\Controllers\AirlinesController::class,'szures']);
+
 
 Route::get('/varos/listazas',[App\Http\Controllers\citycontroller::class,'mutat']);
 Route::get('/varos/create',[App\Http\Controllers\citycontroller::class,'postcreate']);
