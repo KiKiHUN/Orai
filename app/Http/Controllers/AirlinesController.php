@@ -43,12 +43,24 @@ class AirlinesController extends Controller
     public function store(Request $request)
     {
         $s=new Airlines();
-        $s->name=request('name');
-        $s->origin=request('origin');
-        $s->save();
+        if (request("name")=="") {
+           echo("kötelező nevet megadni");
+        }elseif(request("origin")=="")
+        {
+            echo("kötelező várost megadni");
+        }else{
+            if(strlen(request("name"))<4 || strlen(request("origin"))<4)
+            {
+                echo("nem lehet kevesebb mint 5 karakter");
+            }else{
+                $s->name=request('name');
+                $s->origin=request('origin');
+                $s->save();
+                echo "sikeres tárolás";
+                   // return redirect('/legitarsasag/listazas');
+            }
 
-            return redirect('/legitarsasag/listazas');
-
+        }
     }
 
     public function szures($request)

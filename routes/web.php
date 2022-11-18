@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Picturecontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -58,7 +59,7 @@ Route::get('/urllekeres',function(){
 
 
 Route::get('/posts/{post}',[App\Http\Controllers\PostController::class,'show']);
-Route::get('/{nev}',[App\Http\Controllers\PostController::class,'mutat']);
+//Route::get('/{nev}',[App\Http\Controllers\PostController::class,'mutat']);
 
 Route::get('/flights/{id}',[App\Http\Controllers\FlightController::class,'show']);
 
@@ -71,7 +72,7 @@ Route::get('/utasok/{utas}',[App\Http\Controllers\pessengerController::class,'sh
 
 Route::get('/legitarsasag/listazas',[App\Http\Controllers\AirlinesController::class,'mutat']);
 Route::get('/legitarsasag/create',[App\Http\Controllers\AirlinesController::class,'postcreate']);
-Route::post('/legitarsasag/store',[App\Http\Controllers\AirlinesController::class,'store']);
+Route::post('/legitarsasag/store',[App\Http\Controllers\AirlinesController::class,'store'])->name('legitarsasagmentese');
 Route::post('/legitarsasag/edit/{legiID}', [App\Http\Controllers\AirlinesController::class, 'edit']);
 Route::PUT('/legitarsasag/update/{legiID}', [App\Http\Controllers\AirlinesController::class, 'update']);
 Route::delete("/legitarsasag/listazas/{legiID}" , [App\Http\Controllers\AirlinesController::class, 'destroy']);
@@ -82,3 +83,6 @@ Route::get('/varos/listazas',[App\Http\Controllers\citycontroller::class,'mutat'
 Route::get('/varos/create',[App\Http\Controllers\citycontroller::class,'postcreate']);
 Route::post('/varos/store',[App\Http\Controllers\citycontroller::class,'store']);
 
+Route::get("/kepfeltolt",[Picturecontroller::class,'create']);
+Route::get("/kepmegtekintes",[Picturecontroller::class,'show']);
+Route::post("/kepmentese",[Picturecontroller::class,'store'])->name('kepmentes');
